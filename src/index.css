@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #050505;
+  color: #f0f0f0;
+  font-family: 'Geist Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #1e1e1e; border-radius: 2px; }
+::selection { background: #ffffff18; }
+
+input, textarea, select {
+  font-family: 'Geist Mono', monospace;
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input:focus, textarea:focus, select:focus { border-color: #2a2a2a; }
+input::placeholder, textarea::placeholder { color: #222; }
+select option { background: #0d0d0d; }
+textarea { resize: vertical; min-height: 72px; line-height: 1.6; }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 2px; background: #1e1e1e;
+  border-radius: 1px; outline: none; border: none; padding: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #f0f0f0; cursor: pointer;
+}
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.fade-up   { animation: fadeUp 0.45s ease both; }
+.fade-up-1 { animation: fadeUp 0.45s 0.05s ease both; }
+.fade-up-2 { animation: fadeUp 0.45s 0.12s ease both; }
+.fade-up-3 { animation: fadeUp 0.45s 0.20s ease both; }
+.fade-up-4 { animation: fadeUp 0.45s 0.30s ease both; }
+.fade-up-5 { animation: fadeUp 0.45s 0.42s ease both; }
+
+.spinner { width:44px; height:44px; border:1px solid #1a1a1a; border-top-color:#444; border-radius:50%; animation:spin 1s linear infinite; }
